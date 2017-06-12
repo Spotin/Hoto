@@ -6,8 +6,8 @@ import (
 	"github.com/go-yaml/yaml"
 	"log"
 
-	"github.com/Hoto/hoto"
-	"github.com/Hoto/helpers"
+	"github.com/Spotin/Hoto/hoto"
+	"github.com/Spotin/Hoto/helpers"
 )
 
 var hotoConfigYaml = func() string {
@@ -37,5 +37,5 @@ func main() {
 	endpointForMongo := unmarshaledHotoConfig.Hoto.MongoEndpoint
 	portForHoto	 := unmarshaledHotoConfig.Hoto.HotoPort
 
-	hoto.Start(endpointForMongo, portForHoto)
+	hoto.Start(portForHoto, endpointForMongo)
 }

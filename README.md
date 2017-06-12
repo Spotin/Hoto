@@ -1,13 +1,56 @@
 # Hoto
 
-Centralized logging for microservices.
+Centralized logging for microservices. (under development)
 
 ![Hoto Design Doc](/docs/assets/Hoto.png?raw=true)
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
+- Register you service with Hoto
+    - should be the service's name
+- Establish a Context
+    - in the hoto UI logs may be sorted via Contex
+    - examples of Context:
+        - user interaction
+        - errors
+        - health
+- Establish a Topic within the Context
+    - think of topics as 'what do your logs represent'
+    - example topics for the Contex 'Health'
+        - API hits
+        - Ram monitoring
+        - Restarts
+- Send data to Hoto
+    - hoto accepts a very precise format for receiving log data
+        - context/logbook: Something to separate your logs
+        - topic/logpage: the topic of your log book
+        - type: what type of log are you sending? This is used to build descriptive statistics and other visualizations.
+            - text
+            - number
+        - priority: how important is this log? could you go by without seeing it? could it be ignored?
+            - 0: I don't care whatsoever
+            - 1: I can get by without seeing it
+            - 2: Seeing this will be useful
+            - 3: This is pretty important
+            - 4: Oh, wow! What the hell!
+            - 5: OMFG!! GTFO! Call 911!!
+        - value: The value is tied to the 'type' field
+            - if type=text
+                - "im a log"
+                - "im some other log"
+            - is type=number
+                - 593.243
+                - 20392.123
+```json
+{
+  "logbook": "Payments", // Context must be unique
+  "logpage": "All Payments", // Log all payments / must be unique
+  "type": "number",
+  "priority": "1",
+  "value": 54.0
+}
+```
+  
 ### Prerequisites
 
 What things you need to install the software and how to install them
