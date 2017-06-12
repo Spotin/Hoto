@@ -2,3 +2,5 @@ package: github.com/Hoto
 import:
 - package: github.com/gorilla/mux
   version: ^1.4.0
+- package: github.com/go-yaml/yaml
+- package: gopkg.in/mgo.v2
