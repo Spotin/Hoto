@@ -1,0 +1,14 @@
+.box {
+  margin: 10px 10px 10px 10px;
+}
+.onHoverGlow {
+  cursor: pointer;
+}
+
+.onHoverGlow:hover {
+  opacity: 0.3;
+}
+
+.onHoverGlow:hover .middle {
+  opacity: 1;
+}

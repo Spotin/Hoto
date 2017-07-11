@@ -43,11 +43,11 @@ Centralized logging for microservices. (under development)
                 - 20392.123
 ```json
 {
-  "logbook": "Payments", // Context must be unique
-  "logpage": "All Payments", // Log all payments / must be unique
-  "type": "number",
-  "priority": "1",
-  "value": 54.0
+  "machine": "Payment Microservices",
+  "machineHost": "payments.spotin.io",
+  "logbook": "Network Related Issues",
+  "severity": "debug", // info, debug, warn, error, fatal
+  "value": "offload to child microservice ATH successful"
 }
 ```
   
